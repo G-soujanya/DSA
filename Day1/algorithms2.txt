@@ -1,0 +1,105 @@
+1)Algorithm to find sum of even numbers till n
+-start
+-declare variable sum to store sum of even numbers 
+-run a lopp from i=1 to i=n 
+-do sum=sum+i*2
+-display sum 
+-stop
+2)Algorithm to check number is prime or composite 
+-input num 
+-declare count
+-run a loop from i=2 to i=n-1 
+-check if num divisible by i increment count
+-end loop 
+-check if count equal to 0 display prime number 
+-else display composite number 
+3)Algorithm to largest of numbers
+-start 
+-declare max 
+-input number 
+-check if number greater than max then assign number to max 
+-end if 
+-display max 
+-stop 
+4)Algorithm to print type of triangle 
+-start 
+-input s1,s2,s3 
+-start else if 
+-if s1 and s2 and s3 are not equal display scalene 
+-else if s1 and s2 and s3 equal display  eqilateral
+-else display isosceles
+-end else if 
+-stop 
+5)Algorithm to find gcd of two numbers 
+-start 
+-input s1,s2 
+-start while loop 
+-if s1 is greater than s2 then subtract s2 from s1 and it to s1 
+-else if s2 is greater than s1 then subtract s1 from s2 and it to s2
+-if s1 equal to s2 
+-stop the loop 
+-display s1 
+-stop 
+6)Algorithm to find LCM of three numbers 
+-start 
+-input num1,num2,num3 
+-start function gcd 
+- start while loop 
+-if s1 is greater than s2 then subtract s2 from s1 and it to s1 
+-else if s2 is greater than s1 then subtract s1 from s2 and it to s2
+-if s1 equal to s2 
+-stop the loop 
+-return s1
+-store s1 in res
+-multiply s1 and s2 then divide by res 
+-repeat above process for res and s3 
+-display result 
+-stop
+7)Algorithm to find prime numbers till n
+-start 
+-input n
+-run loop from i=1 to i=n
+-declare count
+-run a loop from j=2 to j=i-1 
+-check if i divisible by j increment count
+-end loop 
+-check if count equal to 0 display i
+-end if 
+-stop 
+8)Algorithm to find fibonacci number till n
+-start 
+-declare temp1=0 
+-declare temp2=1 
+-declare res
+-run while loop until res less than or equal to n
+-add temp1 and temp2 store in res 
+-dispay res 
+-assign temp2 to temp1 
+-assign res to temp2 
+-end loop 
+-stop 
+9)Algorithm to find member of fibonacci or not 
+-start
+-First check number is 0 or 1 
+-declare temp1=0 
+-declare temp2=1 
+-declare result
+-run loop until result equal to number 
+-add temp1 and temp2 store in result 
+-assign temp2 to temp1 
+-assign res to temp2
+-if result greater than num return false 
+-end loop 
+-stop
+10)Algorithm to find first n fibonacci numbers
+-start 
+-declare temp1=0 
+-declare temp2=1 
+-declare res
+-run loop from i=1 to i=n
+-add temp1 and temp2 store in res 
+-dispay res 
+-assign temp2 to temp1 
+-assign res to temp2 
+-end loop 
+-stop 
