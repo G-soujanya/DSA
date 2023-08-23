@@ -1,0 +1,71 @@
+1)Algorithms to multiply two numbers. 
+-start 
+-input a,b 
+-multiply a and b 
+-store result in a variable
+-display result
+-stop 
+2)Algorithm to find average of 3 subject marks 
+-start 
+-input m1,m2,m3 
+-add m1,m2 and m3 then store in a variable sum 
+-divide sum with 3 then store result in avg 
+-display avg 
+-stop 
+3)Algrithm to add three numbers 
+-start 
+-input a,b,c 
+-add a,b,c store result in sum 
+-display sum 
+-stop 
+4)Algorithm to print numbers from 1 to n 
+-start 
+-input n 
+-start a loop from 1 to n using variable i
+-display i 
+-increment i 
+-stop when i equal to n 
+-stop 
+5)Algorithm to find factorial of a given number 
+-start 
+-input num 
+-declare a variable p and assign 1
+-start a loop with a variable i from 1 to num
+-multiply p with i 
+-display p 
+-stop 
+6)Algorithm to print multiplication table of a given number 
+-start 
+-input num 
+-start a loop with variable i from 1 to 10 
+-multiply i with num display result 
+-stop 
+7)Algorithm to check even or odd 
+-start 
+-input num 
+-divide num with 2 
+-check result if it 1 then display odd 
+-else display even 
+-stop 
+8)Algorithm to print odd numbers till n
+-start 
+-input num 
+-start a loop with variable i from 1 to num 
+-inside loop check if i divisible by 2 then display i
+-stop 
+9)Algorithm to check valid triangle or not 
+-start 
+-input s1,s2,s3 
+-add s1 and s2 check result is greater than s3 
+-add s2 and s3 check result is greater than s1
+-add s1 and s3 check result is greater than s2
+-if all above three satisfied then display valid 
+-else display not valid 
+-stop
+10)Algorithm to find biggest among three numbers 
+-start 
+-input a,b,c
+-if a greater than b and c display a 
+-if b greater than a and c display b 
+-if c greater than b and a display c  
+-stop 
