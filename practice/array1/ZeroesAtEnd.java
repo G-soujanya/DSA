@@ -1,39 +1,39 @@
-class MinusOneAtStart 
+class ZeroesAtEnd 
 {
     public static void main(String args[])
     {
-        int arr[]={5,-1,4,6,-1,9,2,-1,8,2};
+        int arr[]={0,5,3,2,0,1,4,0,6,8};
         for(int i=0;i<arr.length;i++)
         {
             System.out.print(arr[i]+" ");
         }
         System.out.println();
-        rearrange(arr);
+        rearrangeZeroes(arr);
         for(int i=0;i<arr.length;i++)
         {
             System.out.print(arr[i]+" ");
         }
         System.out.println();
-    }
-    static void rearrange(int[] a)
+    }    
+    static void rearrangeZeroes(int[] a)
     {
-        int i=a.length-1;
-        int j=a.length-1;
-        while(i>=0)
+        int i=0;
+        int j=0;
+        while(i<a.length)
         {
-            if(a[i]==-1)
-                i--; 
+            if(a[i]==0)
+                i++;
             else 
             {
-                a[j]=a[i]; 
-                j--;
-                i--;
+                a[j]=a[i];
+                j++;
+                i++;
             }
         }
-        while(j>=0)
+        while(j<a.length)
         {
-            a[j]=-1;
-            j--;
+            a[j]=0;
+            j++;
         }
     }
 }
