@@ -99,73 +99,7 @@ public class Main {
         System.out.println(Arrays.toString(arr2));
         System.out.println(swaps);
     }
-//    static int minSwaps(int[] nums)
-//    {
-//        int len = nums.length;
-//        HashMap<Integer, Integer> map = new HashMap<>();
-//        for (int i = 0; i < len; i++)
-//            map.put(nums[i], i);
-//
-//        Arrays.sort(nums);
-//
-//        // To keep track of visited elements. Initialize
-//        // all elements as not visited or false.
-//        boolean[] visited = new boolean[len];
-//        //Arrays.fill(visited, false);
-//
-//        // Initialize result
-//        int ans = 0;
-//        for (int i = 0; i < len; i++) {
-//
-//            // already swapped and corrected or
-//            // already present at correct pos
-//            if (visited[i] || map.get(nums[i]) == i)
-//                continue;
-//
-//            int j = i, cycle_size = 0;
-//            while (!visited[j]) {
-//                visited[j] = true;
-//
-//                // move to next node
-//                j = map.get(nums[j]);
-//                cycle_size++;
-//            }
-//
-//            // Update answer by adding current cycle.
-//            if (cycle_size > 0) {
-//                ans += (cycle_size - 1);
-//            }
-//        }
-//        return ans;
-//    }
-//    static int minSwapToMakeArraySame(int a[], int b[], int n)
-//    {
-//
-//        // map to store position of elements in array B
-//        // we basically store element to index mapping.
-//        Map<Integer, Integer> mp
-//                = new HashMap<Integer, Integer>();
-//
-//        for (int i = 0; i < n; i++)
-//        {
-//            mp.put(b[i], i);
-//        }
-//
-//        // now we're storing position of array A elements
-//        // in array B.
-//        for (int i = 0; i < n; i++)
-//            b[i] = mp.get(a[i]);
-//
-//    /* We can uncomment this section to print modified
-//        b array
-//        for (int i = 0; i < N; i++)
-//            cout << b[i] << " ";
-//        cout << endl; */
-//
-//        // returning minimum swap for sorting in modified
-//        // array B as final answer
-//        return minSwaps(b);
-//    }
+
     static int minSwaps(int arr[])
     {
         Map<Integer,Integer> map=new HashMap<>();
