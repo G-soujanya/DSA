@@ -180,3 +180,30 @@ public static void booleanMatrix1(int arr[][])
         }
         System.out.println();
     }
+public static void permuatationsOfString(String str)
+    {
+        int len=str.length();
+        int n=fact(len);
+        for(int i=0;i<n;i++)
+        {
+            StringBuilder sb=new StringBuilder(str);
+            int temp=i;
+            int tempn=len;
+            while (tempn!=0)
+            {
+                int q=temp/tempn;
+                int rem=temp%tempn;
+                System.out.print(sb.charAt(rem));
+                sb.deleteCharAt(rem);
+                temp=q;
+                tempn--;
+            }
+            System.out.println();
+        }
+    }
+    private static int fact(int num)
+    {
+        if(num==1)
+            return 1;
+        return num*fact(num-1);
+    }
