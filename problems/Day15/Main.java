@@ -81,4 +81,74 @@ public class Main {
         String small=removeDuplicates1(str.substring(1));
         return ans+small;
     }
+    public static void mergeSort(int input[])
+    {
+        if(input.length<=1)
+            return;
+        int mid=input.length/2;
+        int part1[]=new int[mid];
+        int part2[]=new int[input.length-mid];
+        for(int i=0;i<mid;i++)
+            part1[i]=input[i];
+        int k=0;
+        for(int i=mid;i<input.length;i++)
+            part2[k++]=input[i];
+        mergeSort(part1);
+        mergeSort(part2);
+        merge(part1,part2,input);
+    }
+
+    private static void merge(int[] part1, int[] part2,int[] input) {
+        int i=0,j=0,k=0;
+        while(i<part1.length && j<part2.length)
+        {
+            if(part1[i]<part2[j])
+                input[k++]=part1[i++];
+            else
+                input[k++]=part2[j++];
+        }
+        while (i<part1.length)
+            input[k++]=part1[i++];
+        while (j<part2.length)
+            input[k++]=part2[j++];
+    }
+    public static void quickSort(int input[],int start,int end)
+    {
+        if(start>=end)
+            return;
+        int pivotIndex=partition(input,start,end);
+        quickSort(input,start,pivotIndex-1);
+        quickSort(input,pivotIndex+1,end);
+    }
+
+    private static int partition(int[] input, int start, int end) {
+        int pivot=input[start];
+        int noOfLessThanPivot=0;
+        for(int i=start+1;i<=end;i++)
+        {
+            if(input[i]<=pivot)
+                noOfLessThanPivot++;
+        }
+        int pivotIndex=start+noOfLessThanPivot;
+        input[start]=input[pivotIndex];
+        input[pivotIndex]=pivot;
+        int i=start;
+        int j=end;
+        while(i<pivotIndex && j>pivotIndex)
+        {
+            if(input[i]<=input[pivotIndex])
+                i++;
+            else if(input[j]>input[pivotIndex])
+                j--;
+            else
+            {
+                int temp=input[i];
+                input[i]=input[j];
+                input[j]=temp;
+                i++;
+                j--;
+            }
+        }
+        return pivotIndex;
+    }
 }
