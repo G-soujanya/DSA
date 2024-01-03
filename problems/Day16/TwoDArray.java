@@ -171,4 +171,39 @@ public class Main {
         }
         System.out.println();
     }
+    public static void spiralPrint(int arr[][])
+    {
+        int rows=arr.length;
+        int columns=arr[0].length;
+        int count=0;
+        int colStart=0,colEnd=columns-1,rowStart=0,rowEnd=rows-1;
+        int noOfEle=rows*columns;
+        while (count<noOfEle)
+        {
+            for(int i=colStart;count<noOfEle && i<=colEnd;i++)
+            {
+                count++;
+                System.out.print(arr[rowStart][i]+" ");
+            }
+            rowStart++;
+            for(int i=rowStart;count<noOfEle && i<=rowEnd;i++)
+            {
+                count++;
+                System.out.print(arr[i][colEnd]+" ");
+            }
+            colEnd--;
+            for(int i=colEnd;count<noOfEle && i>=colStart;i--)
+            {
+                count++;
+                System.out.print(arr[rowEnd][i]+" ");
+            }
+            rowEnd--;
+            for (int i = rowEnd;count<noOfEle &&  i >=rowStart ; i--) {
+                count++;
+                System.out.print(arr[i][colStart]+" ");
+
+            }
+            colStart++;
+        }
+    }
 }
