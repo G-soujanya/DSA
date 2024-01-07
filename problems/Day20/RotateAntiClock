@@ -1,0 +1,52 @@
+import java.util.Arrays;
+
+public class RotateAntiClock {
+    public static void main(String args[])
+    {
+        int ar[][]={{1,2,3},
+                {4,5,6},
+                {7,8,9}};
+        rotateAntiClock(ar);
+        for(int[] x:ar)
+            System.out.println(Arrays.toString(x));
+    }
+    public static void rotateAntiClock(int arr[][])
+    {
+        int rows=arr.length;
+        int columns=arr[0].length;
+        for(int i=0;i<rows-1;i++)
+        {
+            for(int j=i+1;j<rows;j++)
+            {
+                int temp=arr[i][j];
+                arr[i][j]=arr[j][i];
+                arr[j][i]=temp;
+            }
+        }
+        int start=0;
+        int end=rows-1;
+        for(int i=0;i<columns;i++) {
+            while (start < end) {
+                int temp=arr[start][i];
+                arr[start][i]=arr[end][i];
+                arr[end][i]=temp;
+                start++;
+                end--;
+            }
+        }
+    }
+//    public static void reverse(int arr[])
+//    {
+//        int start=0;
+//        int end=arr.length-1;
+//        while (start<end)
+//        {
+//            int temp=arr[start];
+//            arr[start]=arr[end];
+//            arr[end]=temp;
+//            start++;
+//            end--;
+//        }
+//    }
+
+}
