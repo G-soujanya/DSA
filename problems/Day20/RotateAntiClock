@@ -27,6 +27,8 @@ public class RotateAntiClock {
         int end=rows-1;
         for(int i=0;i<columns;i++) {
             while (start < end) {
+                start=0;
+                end=rows-1;
                 int temp=arr[start][i];
                 arr[start][i]=arr[end][i];
                 arr[end][i]=temp;
