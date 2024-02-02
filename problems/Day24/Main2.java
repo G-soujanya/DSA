@@ -1,53 +1,74 @@
 import java.util.*;
 public class Main2 {
-    public static void main(String[] args)
+    public static void main(String args[])
     {
-        int[] arr={160,80,60,60,60,75,85};
-        spanOptimaized(arr);
+//        System.out.println(isValid("{)}"));
+//        System.out.println(reverse("this sky is blue"));
+        System.out.println(speacialSub("ACBGAG"));
     }
-    public static void nearestSmallerElement(int[] arr)
+    public static int isValid(String str)
     {
-        Stack<Integer> stack=new Stack<>();
-        for (int i = 0; i < arr.length; i++) {
-                while (!stack.isEmpty())
+        Stack<Character> stack=new Stack<>();
+        for (int i = 0; i < str.length(); i++) {
+            char ch=str.charAt(i);
+            if(ch=='{' || ch=='(' || ch=='[')
+                stack.push(ch);
+            else if(ch=='}' || ch==')' || ch==']')
+            {
+                if(!stack.isEmpty())
                 {
-                    if(stack.peek()>arr[i])
-                        stack.pop();
-                    else
+                    char ch1=stack.peek();
+                    if((ch==')' && ch1!='(') || (ch=='}' && ch1!='{') || (ch==']' && ch1!='['))
+                        return 0;
+                }
+                else
+                    return 0;
+                stack.pop();
+            }
+        }
+        return 1;
+    }
+    public static int speacialSub(String str)
+    {
+        int count=0;
+        for (int i = 0; i < str.length()-1; i++) {
+            char ch=str.charAt(i);
+            if(ch=='A') {
+                for (int j = i + 1; j < str.length(); j++) {
+                    if(str.charAt(j)=='G')
+                        count++;
+                }
+            }
+        }
+        return count;
+    }
+    public static String reverse(String str)
+    {
+        String revStr="";
+        String tempStr;
+        for (int i = str.length()-1; i >=0; i--) {
+            tempStr="";
+            char ch=str.charAt(i);
+            if(ch==' ')
+                i++;
+            else
+            {
+                int j;
+                for (j = i; j >=0; j--) {
+                    if(str.charAt(j)==' ' && j>=1 && str.charAt(j-1)!=' ')
                         break;
                 }
-                if(!stack.isEmpty())
-                    System.out.print(stack.peek() + " ");
+                for (int k = j+1; k <=i ; k++) {
+                    tempStr+=str.charAt(k);
+                }
+                if(revStr.isEmpty())
+                    revStr+=tempStr;
                 else
-                    System.out.print(-1+" ");
-            stack.push(arr[i]);
-        }
-    }
-    public static void span(int[] arr)
-    {
-        for (int i = 0; i < arr.length; i++) {
-            int count=0;
-            for (int j = i; j>=0; j--) {
-                if(arr[j]<=arr[i])
-                    count++;
-                else
-                    break;
+                    revStr+=" "+tempStr;
+                i=j;
             }
-            System.out.print(count+" ");
         }
-        System.out.println();
+        return revStr;
     }
-    public static void spanOptimaized(int[] arr)
-    {
-        Stack<Integer> stack=new Stack<>();
-        for (int i = 0; i < arr.length; i++) {
-            while (!stack.isEmpty() && arr[stack.peek()]<=arr[i])
-                stack.pop();
-            if(!stack.isEmpty())
-                System.out.print(i-stack.peek()+" ");
-            else
-                System.out.print(i+1+" ");
-            stack.push(i);
-        }
-    }
+
 }
